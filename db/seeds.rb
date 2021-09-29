@@ -13,6 +13,7 @@ Seller.destroy_all
 
 require 'faker'
 
+
 categories = [
   'Home',
   'Outdoors',
@@ -38,11 +39,14 @@ categories = [
   end
 
   5.times do
+    stock = rand(2)
     p = Product.create(
       price: rand(10..100),
       description: "this is a very good product",
       seller_id: s.id,
-      category: categories.sample
+      category: categories.sample,
+      quantity_in_stock: stock,
+      sold_out: (stock === 0 ? true : false)
     )
   end
 end
