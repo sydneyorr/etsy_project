@@ -1,4 +1,5 @@
 import React from "react"
+import Categories from "./Categories";
 import Home from "./Home";
 import Login from "./Login";
 import NoMatch from "./NoMatch";
@@ -10,4 +11,5 @@ export const routes = [
   { pathname: "/", title: "Home", component: Home},
   { pathname: "/things", title: "Things", component: Things},
   { pathname: "/products", title: "Products", component: Products},
+  { pathname: "/categories", title: "Categories", component: Categories},
 ];
