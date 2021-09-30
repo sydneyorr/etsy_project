@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'products', to: 'products#index'
     get 'categories', to: 'products#categories'
     get 'categories/:category', to: 'products#category'
+    get 'sellers', to: 'sellers#index'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

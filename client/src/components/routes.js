@@ -1,5 +1,6 @@
 import React from "react"
 import Categories from "./Categories";
+import FindProducts from "./FindProducts";
 import Home from "./Home";
 import Login from "./Login";
 import NoMatch from "./NoMatch";
@@ -12,4 +13,5 @@ export const routes = [
   { pathname: "/things", title: "Things", component: Things},
   { pathname: "/products", title: "Products", component: Products},
   { pathname: "/categories", title: "Categories", component: Categories},
+  { pathname: "/find", title: "Search", component: FindProducts},
 ];
