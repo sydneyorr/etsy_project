@@ -19,6 +19,7 @@ const FindProducts = ()=> {
             };
         });
     };
+
     const getSellers = async () => {
         try {
             let res = await axios.get("/api/sellers");
@@ -33,7 +34,7 @@ const FindProducts = ()=> {
     const handleSellerChange = async (e, { value }) => {
         console.log(value);
         try {
-            let res = await axios.get(`/api/sellers/${ value}`);
+            let res = await axios.get(`/api/sellers/${ value }`);
             let normalizedCategories = normalizeDropdownOptions(res.data);
             setCategories(normalizedCategories);
         } catch (err) {
@@ -44,13 +45,14 @@ const FindProducts = ()=> {
     const handleCategoryChange = async (e, { value }) => {
         console.log(value);
         try {
-            let res = await axios.get(`/api/categories/${value}`);
+            let res = await axios.get(`/api/seller_categories`);
             setProducts(res.data);
         } catch (err) {}
     };
     return (
-        <div>
+        <div>{console.log("categories", categories)}
             <h1> Products</h1>
+            
             <Dropdown
                 placeholder="Seller"
                 search
@@ -59,7 +61,7 @@ const FindProducts = ()=> {
                 options={sellers}
                 onChange={handleSellerChange}
              />
-            <br />
+             <br />
             {categories && (
                 <Dropdown
                 placeholer="Categories"
